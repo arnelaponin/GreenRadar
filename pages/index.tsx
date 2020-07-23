@@ -1,8 +1,13 @@
 import React, { ReactElement } from "react";
 import Layout from "../components/layout";
+import Home from "../components/home";
 
 function HomePage(): ReactElement {
-  return <Layout>This is the Green Initiative Radar!</Layout>;
+  return (
+    <Layout>
+      <Home />
+    </Layout>
+  );
 }
 
 export default HomePage;
