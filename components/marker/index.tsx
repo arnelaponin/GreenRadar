@@ -1,13 +1,17 @@
 import React, { ReactElement } from "react";
+import styles from "./marker.module.scss";
 
 interface MarkerProp {
   lat: number;
   lng: number;
-  text: string;
 }
 
-function Marker({ text }: MarkerProp): ReactElement {
-  return <div>{text}</div>;
+function Marker({}: MarkerProp): ReactElement {
+  return (
+    <>
+      <div className={styles.markerContainer}></div>
+    </>
+  );
 }
 
 export default Marker;
