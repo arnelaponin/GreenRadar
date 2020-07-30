@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import GoogleMapReact from "google-map-react";
-import styles from "./home.module.scss";
+import Marker from "../marker";
 
 function Home(): ReactElement {
   const defaultMapProps = {
@@ -12,12 +12,14 @@ function Home(): ReactElement {
   };
 
   return (
-    <div className={styles.mapcontainer}>
+    <div style={{ height: "100vh", width: "100%" }}>
       <GoogleMapReact
         //bootstrapURLKeys={{ key: /* YOUR KEY HERE */ }}
         defaultCenter={defaultMapProps.center}
         defaultZoom={defaultMapProps.zoom}
-      ></GoogleMapReact>
+      >
+        <Marker lat={defaultMapProps.center.lat} lng={defaultMapProps.center.lng} text="My Marker" />
+      </GoogleMapReact>
     </div>
   );
 }
