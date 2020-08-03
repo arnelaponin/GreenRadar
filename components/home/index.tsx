@@ -1,6 +1,7 @@
 import React, { ReactElement } from "react";
 import Marker from "../marker";
 import Map from "../map";
+import places from "../places";
 
 function Home(): ReactElement {
   const defaultMapProps = {
@@ -14,7 +15,9 @@ function Home(): ReactElement {
   return (
     <div>
       <Map defaultCenter={defaultMapProps.center} defaultZoom={defaultMapProps.zoom}>
-        <Marker lat={defaultMapProps.center.lat} lng={defaultMapProps.center.lng} />
+        {places.map((place) => (
+          <Marker key={place.id} lat={place.lat} lng={place.lng} />
+        ))}
       </Map>
     </div>
   );
