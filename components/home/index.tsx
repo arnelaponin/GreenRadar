@@ -9,7 +9,7 @@ function Home(): ReactElement {
       lat: 41.38,
       lng: 2.17,
     },
-    zoom: 11,
+    zoom: 13,
   };
 
   return (
