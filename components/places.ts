@@ -1,3 +1,12 @@
+export interface PlaceProp {
+  id: number;
+  lat: number;
+  lng: number;
+  name: string;
+  address: string;
+  url: string;
+}
+
 export default [
   {
     id: 1,
