@@ -17,4 +17,12 @@
 
 .formColumn {
     height: 80px;
+
+    .formWrapper {
+        margin: 15px;
+
+        h1 {
+            text-align:center;
+        }
+    }
 }

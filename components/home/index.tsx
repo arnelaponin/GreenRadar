@@ -26,7 +26,9 @@ function Home(): ReactElement {
       </div>
       <div className={styles.column}>
         <div className={styles.formColumn}>
-          <h1>We need you helping filling out this map. Suggest a new initiative!</h1>
+          <div className={styles.formWrapper}>
+            <h1>We need you helping filling out this map. Suggest a new initiative!</h1>
+          </div>
         </div>
       </div>
     </>
