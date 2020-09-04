@@ -2,6 +2,7 @@ import React, { ReactElement } from "react";
 import Map from "../map";
 import places from "../places";
 import PlaceInformation from "../place-information";
+import InitiativeForm from "../initiative-form";
 import styles from "./home.module.scss";
 
 function Home(): ReactElement {
@@ -28,6 +29,7 @@ function Home(): ReactElement {
         <div className={styles.formColumn}>
           <div className={styles.formWrapper}>
             <h1>We need you helping filling out this map. Suggest a new initiative!</h1>
+            <InitiativeForm />
           </div>
         </div>
       </div>
