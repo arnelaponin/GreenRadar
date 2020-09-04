@@ -2,3 +2,14 @@
     display: flex;
     flex-direction: column;
 }
+
+.pageWrapper {
+    margin: 30px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}

@@ -15,7 +15,10 @@ function Layout({ children }: LayoutProps): ReactElement {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <Header />
-      <div className={styles.container}>{children}</div>
+
+      <div className={styles.pageWrapper}>
+        <div className={styles.row}>{children}</div>
+      </div>
     </>
   );
 }

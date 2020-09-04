@@ -1,0 +1,20 @@
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+.doubleColumn {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 2;
+}
+
+.mapColumn {
+    height: 80px;
+}
+
+.formColumn {
+    height: 80px;
+}

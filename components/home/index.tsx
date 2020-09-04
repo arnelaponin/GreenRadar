@@ -2,6 +2,7 @@ import React, { ReactElement } from "react";
 import Map from "../map";
 import places from "../places";
 import PlaceInformation from "../place-information";
+import styles from "./home.module.scss";
 
 function Home(): ReactElement {
   const defaultMapProps = {
@@ -13,13 +14,22 @@ function Home(): ReactElement {
   };
 
   return (
-    <div>
-      <Map defaultCenter={defaultMapProps.center} defaultZoom={defaultMapProps.zoom}>
-        {places.map((place) => (
-          <PlaceInformation key={place.id} {...place}></PlaceInformation>
-        ))}
-      </Map>
-    </div>
+    <>
+      <div className={styles.doubleColumn}>
+        <div className={styles.mapColumn}>
+          <Map defaultCenter={defaultMapProps.center} defaultZoom={defaultMapProps.zoom}>
+            {places.map((place) => (
+              <PlaceInformation key={place.id} {...place}></PlaceInformation>
+            ))}
+          </Map>
+        </div>
+      </div>
+      <div className={styles.column}>
+        <div className={styles.formColumn}>
+          <h1>We need you helping filling out this map. Suggest a new initiative!</h1>
+        </div>
+      </div>
+    </>
   );
 }
 
