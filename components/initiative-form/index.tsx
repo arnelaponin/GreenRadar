@@ -1,26 +1,34 @@
 import React, { ReactElement } from "react";
 import { useForm } from "react-hook-form";
+import styles from "./initiative-form.module.scss";
 
-type Inputs = {
-  example: string;
-  exampleRequired: string;
+type InitiativeInterface = {
+  name: string;
+  url: string;
+  contact: string;
+  address: string;
 };
 
 function InitiativeForm(): ReactElement {
-  const { register, handleSubmit, watch, errors } = useForm<Inputs>();
+  const { register, handleSubmit, errors } = useForm<InitiativeInterface>();
   const onSubmit = (data) => console.log(data);
 
-  console.log(watch("example")); // watch input value by passing the name of it
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       {/* register your input into the hook by invoking the "register" function */}
-      <input name="example" defaultValue="test" ref={register} />
+      <label htmlFor="name">Intitiative Name</label>
+      <input id="name" name="name" ref={register({ required: true })} />
+      {errors.name && <span>Name of the initiative is required</span>}
 
       {/* include validation with required or other standard HTML validation rules */}
-      <input name="exampleRequired" ref={register({ required: true })} />
-      {/* errors will return when field validation fails  */}
-      {errors.exampleRequired && <span>This field is required</span>}
+      <label htmlFor="url">Url</label>
+      <input id="url" name="url" ref={register} />
+
+      <label htmlFor="contact">Contact (phone or email)</label>
+      <input id="contact" name="contact" ref={register} />
+
+      <label htmlFor="address">Address</label>
+      <input id="address" name="address" ref={register} />
 
       <input type="submit" />
     </form>
